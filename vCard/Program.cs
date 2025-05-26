@@ -69,6 +69,7 @@ namespace vCard_CSHARP
                             AfficherPromptCentre($"{containerPhrase[i]}");
                             string prompt = Console.ReadLine();
                             dataNewContact.Add(prompt);
+                            
                         }
                         AddContact contact = new AddContact(dataNewContact[0], dataNewContact[1], dataNewContact[2]);
                         string? pathForAll = Path.Combine(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory)?.Parent?.Parent?.FullName??".", "contacts.vcf"); 

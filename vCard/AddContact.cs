@@ -1,12 +1,16 @@
 ﻿using System;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace vCard_CSHARP;
 
 public class AddContact
 {
     //Declaration of variables 
+    
+    
+    
     private string? _fn;
     public string?  Fn {get => _fn; set => _fn = value;}
     private string?  _mail;
@@ -28,8 +32,8 @@ public class AddContact
         {
             { "BEGIN", "VCARD" },
             { "FN",  Fn },
-            { "TEL", Phone },
-            { "EMAIL", Email },
+            { "TEL", ValidateInput(phone) },
+            { "EMAIL", ValidateInput(mail) },
             { "END", "VCARD" },
         };
     }
@@ -41,6 +45,10 @@ public class AddContact
         foreach (var item in information)
         {
             sb.AppendLine($"{item.Key}:{item.Value}");
+            if (item.Value.Equals("invalid"))
+            {
+                throw new InvalidDataException("Invalid data");
+            }
         }
         
         //Add empty line 
@@ -52,5 +60,24 @@ public class AddContact
     {
         File.AppendAllText(filePath, ShowItem());
     }
-   
+
+    public string ValidateInput(string input)
+    {
+        var emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+        var phonePattern = @"^\+\d{6,15}$";
+
+        if (Regex.IsMatch(input, emailPattern, RegexOptions.IgnoreCase))
+        {
+            return $"{input}";
+        }
+        else if (Regex.IsMatch(input, phonePattern))
+        {
+            return $"{input}";
+        }
+        else
+        {
+            return "invalid";
+        }
+    }
+    
 }
