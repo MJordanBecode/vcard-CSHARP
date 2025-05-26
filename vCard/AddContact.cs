@@ -9,8 +9,10 @@ public class AddContact
 {
     //Declaration of variables 
     
-    
-    
+    private string _firstName;
+    public string FirstName {get => _firstName; set => _firstName = value; }
+    private string _lastName;
+    public string LastName {get => _lastName; set => _lastName = value; }
     private string? _fn;
     public string?  Fn {get => _fn; set => _fn = value;}
     private string?  _mail;
@@ -21,10 +23,10 @@ public class AddContact
 
     private Dictionary<string, string> information;
     
-    public  AddContact(string? fn, string? mail, string? phone)
+    public  AddContact(string? firstName, string? lastName, string? mail, string? phone)
     {
        
-        Fn = fn;
+        Fn = firstName + " " + lastName;
         Email = mail;
         Phone = phone;
 

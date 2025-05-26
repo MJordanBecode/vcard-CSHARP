@@ -61,7 +61,7 @@ namespace vCard_CSHARP
                     case "2":
                         CenteredWriteLine("➕ Adding a new contact...");
                         string Name, Email, Phone;
-                        List<string> containerPhrase = new List<string> { "Name : ", "Email : ", "Phone : " };
+                        List<string> containerPhrase = new List<string> { "FirstName : ", "LastName : ", "Email : ", "Phone : " };
                         List<string> dataNewContact = new List<string> {  };
                         for (int i = 0; i < containerPhrase.Count; i++)
                         {
@@ -71,7 +71,7 @@ namespace vCard_CSHARP
                             dataNewContact.Add(prompt);
                             
                         }
-                        AddContact contact = new AddContact(dataNewContact[0], dataNewContact[1], dataNewContact[2]);
+                        AddContact contact = new AddContact(dataNewContact[0], dataNewContact[1], dataNewContact[2], dataNewContact[3]);
                         string? pathForAll = Path.Combine(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory)?.Parent?.Parent?.FullName??".", "contacts.vcf"); 
                         
                         contact.SaveToVcf(pathForAll);
