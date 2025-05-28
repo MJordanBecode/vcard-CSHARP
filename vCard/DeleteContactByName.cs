@@ -26,13 +26,13 @@ public class DeleteContactByName
                 if (allLines.GetRange(i, contact.Count).SequenceEqual(contact))
                 {
                     allLines.RemoveRange(i, contact.Count);
+                    Console.WriteLine("✅ Contact Delete With Success.");
                     break;
                 }
             }
         }
         File.WriteAllLines(path, allLines);
-        Console.WriteLine("✅ Contact Delete With Success.");
-
+        
     }
 
 }

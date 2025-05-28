@@ -57,6 +57,8 @@ namespace vCard_CSHARP
                 {
                     case "1":
                         CenteredWriteLine("📇 Displaying all contacts...");
+                        DisplayAllContact displayAllContact = new DisplayAllContact();
+                        displayAllContact.DisplayAllListContact();
                         break;
                     case "2":
                         CenteredWriteLine("➕ Adding a new contact...");
