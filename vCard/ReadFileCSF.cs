@@ -1,13 +1,13 @@
 ﻿using System.IO;
 namespace vCard_CSHARP;
 
-public class ReadFileCSF //ReadFile 
+public class ReadFileVCF //ReadFile 
 {
     
     private string? line;
 
-    private string? PathForAll = Path.Combine(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory)?.Parent?.Parent?.FullName??".", "contacts.vcf"); 
-    public ReadFileCSF()
+    public string? PathForAll = Path.Combine(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory)?.Parent?.Parent?.FullName??".", "contacts.vcf"); 
+    public ReadFileVCF()
     {
         try
         {
@@ -16,7 +16,7 @@ public class ReadFileCSF //ReadFile
 
             while (line != null)
             {
-                Console.WriteLine(line);
+                // Console.WriteLine(line);
                 line = sr.ReadLine();
             }
 
@@ -27,17 +27,5 @@ public class ReadFileCSF //ReadFile
         {
             Console.WriteLine("Exception : " + e.Message);
         }
-        finally
-        {
-            Console.WriteLine("Executing finally block");
-        }
     }
-
-    public void SearchByName(ReadFileCSF search)
-    {
-        
-    }
-
-
-
 }

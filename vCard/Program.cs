@@ -81,9 +81,17 @@ namespace vCard_CSHARP
                         break;
                     case "3":
                         CenteredWriteLine("🔍 Searching contact by name...");
+                        string promptSearchByName = Console.ReadLine();
+                        Console.Clear();
+                        
+                        SearchContactByName searchName = new SearchContactByName($"{promptSearchByName}");
+                        searchName.SomeMethod();
                         break;
                     case "4":
                         CenteredWriteLine("🗑️ Deleting contact by name...");
+                        string promptDeleteName = Console.ReadLine();
+                        DeleteContactByName deleteName = new DeleteContactByName($"{promptDeleteName}");
+                        deleteName.DeleteContact();
                         break;
                     case "5":
                         CenteredWriteLine("📤 Exporting contact...");
@@ -115,8 +123,9 @@ namespace vCard_CSHARP
      
             
             // Console.WriteLine(); // saut de ligne après l’entrée
-
             
         }
+
+
     }
 }

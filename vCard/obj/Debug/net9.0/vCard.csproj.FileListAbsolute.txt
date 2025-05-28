@@ -27,3 +27,4 @@
 /home/jordan/Becode/Wozniak/vcard-CSHARP/vCard/obj/Debug/net9.0/vCard.genruntimeconfig.cache
 /home/jordan/Becode/Wozniak/vcard-CSHARP/vCard/obj/Debug/net9.0/ref/vCard.dll
 /home/jordan/Becode/Wozniak/vcard-CSHARP/vCard/obj/Debug/net9.0/vCard.sourcelink.json
+//wsl.localhost/Ubuntu/home/jordan/Becode/Wozniak/vcard-CSHARP/vCard/obj/Debug/net9.0/vCard.sourcelink.json

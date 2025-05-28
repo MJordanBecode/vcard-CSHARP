@@ -4,7 +4,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 
 namespace vCard_CSHARP;
-
+//Faire un système qui vérifie le numéro de téléphone, si le numéro de tel est déjà enregistré retourner un message " ce numéro de téléphone est déjà enregistré au nom de : nom prénom email et numéro de la personne
 public class AddContact
 {
     //Declaration of variables 
