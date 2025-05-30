@@ -10,13 +10,12 @@ public class ExportContact
     public ExportContact(string name)
     {
         Name =  name;
-        ExportNameFile = $"{Name}.cvf";
+        ExportNameFile = $"{Name.Replace(" ","")}.cvf";
         PathExportContact = Path.Combine("exportedContact", ExportNameFile);
     }
     
     public void Exportcontact()
     {
-        Console.Write("je suis dans le export ZEBI");
         SearchContactByName search = new SearchContactByName($"{Name}");
         List<List<string>> foundContacts = search.SomeMethod();
 
@@ -33,5 +32,4 @@ public class ExportContact
         File.WriteAllText(PathExportContact, texteFinal);
     }
 
-   
 }
