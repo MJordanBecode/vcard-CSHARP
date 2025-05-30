@@ -97,6 +97,9 @@ namespace vCard_CSHARP
                         break;
                     case "5":
                         CenteredWriteLine("📤 Exporting contact...");
+                        string promptExportName = Console.ReadLine();
+                        ExportContact teeeeest = new(promptExportName);
+                        teeeeest.Exportcontact();
                         break;
                     case "6":
                         CenteredWriteLine("👋 Exiting... Goodbye!");
